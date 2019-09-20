@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './home.css'
 import BackendApi from './auth/backendApi'
 import History from '../components/history'
-import { useAuth } from './auth/protectedRoutes/auth'
 
 export default class home extends Component {
     logout = () => {
@@ -15,9 +14,7 @@ export default class home extends Component {
             .catch(error => {
                 console.log(error)
             })
-        const { setAuthTokens } = useAuth()
-
-        setAuthTokens()
+ 
     }
 
     render() {
